@@ -3,11 +3,8 @@ import { Login } from "./Login";
 import { Browse } from "./Browse";
 import { createBrowserRouter } from "react-router-dom";
 import { RouterProvider } from "react-router-dom";
-import { Provider, useDispatch } from "react-redux";
-import appStore from "../utlis/appStore";
-import { clearUser, setUser } from "../utlis/userSlice";
+import {  useDispatch } from "react-redux";
 
-import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 export const Body = () => {
     const dispatch =useDispatch();
@@ -22,20 +19,7 @@ export const Body = () => {
       element: <Browse />,
     },
   ]);
-  useEffect(() => {
-    const auth = getAuth();
-    onAuthStateChanged(auth, (user) => {
-      if (user) {
-        const {uid, email, displayName} = user;
-        dispatch(setUser({uid: uid, email: email, displayName: displayName}));
-      
-       
-      } else {
-        dispatch(clearUser(null));
-        
-      }
-    });
-  }, []);
+  
   return (
     <>
       

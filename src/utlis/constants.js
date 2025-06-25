@@ -8,3 +8,17 @@ export const API_OPTIONS = {
 
 export const IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w500/";
 //https://image.tmdb.org/t/p/w500/1E5baAaEse26fej7uHcjOgEE2t2.jpg
+
+export const LANGUAGES=[{
+  name: "English",
+  code: "en"
+}, {
+  name: "Hindi",
+  code: "hi"
+}, {
+  name: "Tamil",
+  code: "ta"
+}, {
+  name: "Telugu",
+  code: "te"
+}]
